@@ -46,6 +46,21 @@ public class BookResource {
         this.bookRepository = bookRepository;
     }
 
+    @GetMapping("/booksByTitle_01")
+    public ResponseEntity<List<Book>> getBooksByTitle(@org.springdoc.api.annotations.ParameterObject Pageable pageable) {
+        // log.debug("REST request to get a page of Books");
+
+        // List<Book> books = bookRepository.findByTitle("high-level");    // where title = ?1
+        // List<Book> books = bookRepository.findByTitleContaining("ing"); // where title like %?1%
+        // List<Book> books = bookRepository.findByTitleExtra01("ing");
+        List<Book> books = bookRepository.findByTitleExtra02("ing");
+
+        Page<Book> page = bookRepository.findAll(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+        // return ResponseEntity.ok().headers(headers).body(page.getContent());
+        return ResponseEntity.ok().headers(headers).body(books);
+    }
+
     /**
      * {@code POST  /books} : Create a new book.
      *
