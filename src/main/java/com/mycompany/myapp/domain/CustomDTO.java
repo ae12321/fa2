@@ -1,5 +1,6 @@
 package com.mycompany.myapp.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import javax.persistence.*;
 
@@ -22,6 +23,8 @@ public class CustomDTO implements Serializable {
 
     // need
     @Id
+    // リクエストボディにidをいれなくていい、id=nullで連携される、{ "name": string; "age": number; "title": string; }を渡せばいい
+    @JsonIgnore
     private Long id;
 
     private String name;
@@ -41,6 +44,11 @@ public class CustomDTO implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "CustomDTO [id=" + id + ", name=" + name + ", age=" + age + ", title=" + title + "]";
     }
 
     public Integer getAge() {

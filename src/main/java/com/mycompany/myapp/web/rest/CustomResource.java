@@ -45,4 +45,20 @@ public class CustomResource {
         return ResponseEntity.ok().body(lists);
         // return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, "")).build();
     }
+
+    @PostMapping("/custom_02")
+    public ResponseEntity<List<CustomDTO>> asdfasdfasdf(@RequestBody CustomDTO customDTO) {
+        log.debug("REST request to delete Person : {}", "id");
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println(customDTO);
+        System.out.println("");
+        System.out.println("");
+
+        List<CustomDTO> lists = customRepository.findCustom();
+
+        return ResponseEntity.ok().body(lists);
+        // return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, "")).build();
+    }
 }
