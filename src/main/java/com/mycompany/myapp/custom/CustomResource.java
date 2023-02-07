@@ -1,7 +1,5 @@
-package com.mycompany.myapp.web.rest;
+package com.mycompany.myapp.custom;
 
-import com.mycompany.myapp.domain.CustomDTO;
-import com.mycompany.myapp.repository.CustomRepository;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package com.mycompany.myapp.domain;
+package com.mycompany.myapp.custom;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;

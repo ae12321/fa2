@@ -1,6 +1,5 @@
-package com.mycompany.myapp.repository;
+package com.mycompany.myapp.custom;
 
-import com.mycompany.myapp.domain.CustomDTO;
 import com.mycompany.myapp.domain.Person;
 import java.util.List;
 import org.springframework.data.jpa.repository.*;

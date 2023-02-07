@@ -10,7 +10,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import tech.jhipster.config.JHipsterConstants;
 
 @Configuration
-@EnableJpaRepositories({ "com.mycompany.myapp.repository" })
+// ここにパッケージを追加したら、自動生成と切り離せる
+@EnableJpaRepositories({ "com.mycompany.myapp.repository", "com.mycompany.myapp.custom" })
 @EnableJpaAuditing(auditorAwareRef = "springSecurityAuditorAware")
 @EnableTransactionManagement
 public class DatabaseConfiguration {}
